@@ -5,5 +5,4 @@ if [ $# -ne 1 ]; then
     exit 1
 fi
 
-qrencode -t ANSIUTF8 "$1"
-
+qrencode -t UTF8 "$1"
