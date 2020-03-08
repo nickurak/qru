@@ -15,10 +15,10 @@ RUN make
 RUN make install
 RUN ldconfig
 
-COPY qru-entrypoint.sh /
-RUN chmod a+x /qru-entrypoint.sh
+COPY qru-entrypoint.sh /usr/local/bin/
+RUN chmod a+x /usr/local/bin/qru-entrypoint.sh
 
 COPY qru.sh /usr/local/bin
 RUN chmod a+x /usr/local/bin/qru.sh
 
-ENTRYPOINT ["/qru-entrypoint.sh"]
+ENTRYPOINT ["/usr/local/bin/qru-entrypoint.sh"]
