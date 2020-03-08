@@ -5,4 +5,8 @@ if [ $# -ne 1 ]; then
     exit 1
 fi
 
-qrencode -t UTF8 "$1"
+if [ "$1" = "-" ]; then
+    exec qrencode -t UTF8
+fi
+
+exec qrencode -t UTF8 "$1"
