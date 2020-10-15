@@ -9,6 +9,7 @@ RUN git clone https://github.com/fukuchi/libqrencode.git /app/src/
 
 WORKDIR /app/src
 
+RUN git checkout v4.0.2
 
 RUN ./autogen.sh
 RUN ./configure --without-png
