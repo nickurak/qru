@@ -4,6 +4,7 @@ FROM qru-ubuntu-base as qru-ubuntu-build
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update
 RUN apt-get install -q -y git-core autoconf automake autotools-dev libtool pkg-config
+RUN apt-get install -q -y make
 
 RUN git clone https://github.com/fukuchi/libqrencode.git /app/src/
 
@@ -12,7 +13,7 @@ WORKDIR /app/src
 RUN git checkout v4.0.2
 
 RUN ./autogen.sh
-RUN ./configure --without-png
+RUN ./configure --without-png --disable-dependency-tracking
 RUN make
 RUN make install
 
