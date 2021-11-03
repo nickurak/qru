@@ -3,8 +3,7 @@ FROM ubuntu as qru-ubuntu-base
 FROM qru-ubuntu-base as qru-ubuntu-build
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update
-RUN apt-get install -q -y git-core autoconf automake autotools-dev libtool pkg-config
-RUN apt-get install -q -y make
+RUN apt-get install -q -y git-core autoconf automake autotools-dev libtool pkg-config make
 
 RUN git clone https://github.com/fukuchi/libqrencode.git /app/src/
 
