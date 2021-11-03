@@ -1,5 +1,5 @@
 all:
-	podman build . -t qru
-	podman tag qru atrus/qru
-	podman tag qru docker.io/atrus/qru
+	docker build . -t qru
+	docker tag qru atrus/qru
+	docker tag qru docker.io/atrus/qru
 
